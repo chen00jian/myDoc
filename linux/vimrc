@@ -1,0 +1,12 @@
+/*
+ *.vimr初始化配置参考
+ * */
+
+
+set nu
+syntax on
+set encoding=utf-8
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
