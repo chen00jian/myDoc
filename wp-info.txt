@@ -1,0 +1,28 @@
+wp 内置函数说明
+
+	bloginfo('name')	调用站点名称
+	bloginfo('url')		调用网站首页
+	bloginfo('stylesheet','url')	调用style文件
+	bloginfo('description')		站点描述
+	
+	
+	post文章
+	
+	<?php the_title();?> 文章标题
+	
+	<?php the_permalink(); ?> 文章的地址
+	
+	<?php the_content(); ?>文章内容
+	
+	<?php the_author();?> 文章作者
+	
+	<?php the_category(); ?>文章所属分类
+	
+	_e() 多语言的支持，自动翻译
+	
+	<?php edit_post_link(’Edit’, ‘ | ‘, ”); ?>编辑链接
+	
+	
+	
+	
+	
