@@ -21,6 +21,23 @@ wp 内置函数说明
 	_e() 多语言的支持，自动翻译
 	
 	<?php edit_post_link(’Edit’, ‘ | ‘, ”); ?>编辑链接
+
+	<?php the_ID(); ?>  文章id
+
+	<?php wp_list_cats(); ?> – 调用分类链接列表
+
+	<?php wp_list_cats(’sort_column=name&optioncount=1&hierarchical=0′); ?>
+		sort_column=name – 把分类按字符顺序排列
+		optioncount=1 – 显示每个分类含有的日志数
+		hierarchial=0 – 不按照层式结构显示子分类，这就解释了为什么子分类链接是列在列表中第一级。
+
+	<?php wp_list_pages(); ?>分页列表
+
+	<?php wp_get_archives(’type=monthly’); ?> 按月份显示发表的成果
+
+	<?php get_links_list(); ?> 友情链接列表
+
+	<?php wp_loginout(); ?> 登录按钮
 	
 	
 	
