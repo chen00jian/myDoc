@@ -71,6 +71,12 @@ function my_toplevel_page() {
 
 // 通过add_action来自动调用my_add_pages函数
 add_action('admin_menu', 'my_add_pages');
-	
+
+//摘要中文数字自定义,默认摘要截取55英文单词，并未考虑中文情况，截取规则是: implode('',$words);
+function chinese_excerpt($text, $lenth=100) {
+    $text = mb_substr($text,0, $lenth);
+    return $text;
+}
+add_filter('the_excerpt', ' chinese_excerpt ');
 	
 ?>	
