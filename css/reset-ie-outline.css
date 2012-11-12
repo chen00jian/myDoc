@@ -1,0 +1,8 @@
+/*
+ * IE中去掉outline可以在html元素可直接添加hidefocus="true"
+ * 或在CSS中添加如下属性
+ */
+input[type=text],#slider a{
+    outline:none;
+    ie-dummy: expression(this.hideFocus=true);/*IE图片滚动链接去掉outline*/
+}
