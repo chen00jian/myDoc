@@ -8,7 +8,8 @@
      */
     header("Content-Type: text/html; charset=utf-8");
     error_reporting( E_ERROR | E_WARNING );
-    $path = 'upload/';                            //最好使用缩略图地址，否则当网速慢时可能会造成严重的延时
+    $path = '/Users/op/project/localWeb/uploads';
+    $fePath = '/uploads';                            //最好使用缩略图地址，否则当网速慢时可能会造成严重的延时
     $action = htmlspecialchars( $_POST[ "action" ] );
     if ( $action == "get" ) {
         $files = getfiles( $path );
@@ -34,11 +35,12 @@
         while ( false !== ( $file = readdir( $handle ) ) ) {
             if ( $file != '.' && $file != '..' ) {
                 $path2 = $path . '/' . $file;
+                
                 if ( is_dir( $path2 ) ) {
                     getfiles( $path2 , $files );
                 } else {
                     if ( preg_match( "/\.(gif|jpeg|jpg|png|bmp)$/i" , $file ) ) {
-                        $files[] = $path2;
+                        $files[] = substr($path2, strpos($path2,'/uploads'));
                     }
                 }
             }

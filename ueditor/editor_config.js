@@ -62,8 +62,8 @@ UEDITOR_HOME_URL : URL
 //,localDomain:[]                            //本地顶级域名，当开启远程图片抓取时，除此之外的所有其它域名下的图片都将被抓取到本地
 
 //图片在线管理配置区
-,imageManagerUrl:URL + "php/imageManager.php"       //图片在线管理的处理地址
-,imageManagerPath:URL + "php/"                                    //图片修正地址，同imagePath
+//,imageManagerUrl:URL + "php/imageManager.php"       //图片在线管理的处理地址
+//,imageManagerPath:""                                    //图片修正地址，同imagePath
 
 //屏幕截图配置区
 ,snapscreenHost: '127.0.0.1'                                  //屏幕截图的server端文件所在的网站地址或者ip，请不要加http://
