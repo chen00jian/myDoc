@@ -1,34 +1,22 @@
 <?php
 /**
- * 上传文件只做演示，上传未做验证
+ * 
  */
-/*
- * 定义根路径常量
- */
-define('ROOT', $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR);
+require_once 'UploadFile.class.php';
 
-//上传的目录，相对于网站根目录
-$upload_dir = 'image-upload/uploads/';
+$Upload = new UploadFile;
+$Upload->maxSize = 2000000; //最大尺寸
+$Upload->allowExts = array('gif','png','jpg','jpeg');
+$Upload->savePath = './uploads/';
+$Upload->saveRule = ''; //使用默认名称，不使用随机命名
 
-//文件验证
-//上传最大尺寸
-//上传格式验证
-//mime类型验证
-//文件上传
-
-//原始文件名称
-$org_name = $_FILES['myfile']['name'];
-
-$tmp_name = $_FILES['myfile']['tmp_name'];
-
-//完整上传路径
-$filename = ROOT.$upload_dir.$org_name;
-
-if(move_uploaded_file($tmp_name, $filename)){
-    /*
-     * 可以自行裁切缩略图后返回给客户端
-     */
-    echo '<img src="http://localhost/image-upload/uploads/'.$org_name.'" />';
+if($Upload->upload()){
+    echo '<span class="ok">';
+    echo "<img src='images/ok.png' /> 上传成功！";
+    echo '<span class="ok">';
+    //也可以裁切图片，输出缩略图，到页面预览
 }else{
-    echo "上传失败!";
+    echo '<span class="error">';
+    echo $Upload->getErrorMsg();
+    echo '<span class="error">';
 }

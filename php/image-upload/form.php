@@ -1,35 +1,19 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
-        <title>iframe文件上传-模拟ajax</title>
-        <style type="text/css" media="screen">
-            /*隐藏iframe*/
-            iframe{
-                height: 0;
-                width: 0;
-                border: 0;
-                display: hidden;
-            }
-            
-           .placeholder{
-               padding: 15px;
-               border: 1px solid #ccc;
-           }
-        </style>
+        <title>图片边框上传</title>
+        <link rel="stylesheet" type="text/css" href="style/file_upload.css" />
     </head>
     <body>
-        <h4>选择文件后自动上传</h4>
-        <p>demo只做逻辑演示，未考虑兼容性和代码优化</p>
-        <form action="upload.php" method="post" enctype="multipart/form-data" target="ajax-post" id="form-box">
-            <p>
-                <input type="file" name="myfile" id="myfile" />
-            </p>
-        </form>
-        <div class="placeholder">
-            <p>图片展示区域</p>
+        <div class="box">
+            <h4>选择文件后自动上传</h4>
+            <form action="upload.php" method="post" enctype="multipart/form-data" target="ajax-post" id="form-box">
+               <input type="file" name="myfile" id="myfile" />
+            </form>
             <div id="thumbnail"></div>
         </div>
+        
         <script type="text/javascript">
             //图片预览区域
             var thumbnail = document.getElementById('thumbnail');

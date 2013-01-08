@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0
+}
+body {
+    text-align: center
+}
+.box {
+    width: 600px;
+    margin: 50px auto;
+    text-align: left
+}
+form {
+    margin-top: 15px;
+}
+/*隐藏iframe*/
+iframe {
+    height: 0;
+    width: 0;
+    border: 0;
+    display: hidden;
+}
+.error{
+    color: #db0424;
+}
+#thumbnail{
+    margin-top: 15px;
+}
+#thumbnail img{
+    vertical-align: middle;
+    margin-right: 10px;
+}
