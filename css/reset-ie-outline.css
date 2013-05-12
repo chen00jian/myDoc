@@ -1,8 +1,26 @@
 /*
  * IE中去掉outline可以在html元素可直接添加hidefocus="true"
+ * <a href="javascript:;" hidefocus="true" >这是一个链接</a>
  * 或在CSS中添加如下属性
  */
 input[type=text],#slider a{
     outline:none;
     ie-dummy: expression(this.hideFocus=true);/*IE图片滚动链接去掉outline*/
 }
+
+
+
+a,button{outline:none;blr:expression(this.onFocus=this.blur());}
+a:link,a:visited{color:#333333;-color:#8D8D8D; text-decoration:none;}
+a:hover{color:#333333; text-decoration:underline;}
+/*begin 去掉Button的虚线框*/
+button::-moz-focus-inner,  
+input[type="reset"]::-moz-focus-inner,  
+input[type="button"]::-moz-focus-inner,  
+input[type="submit"]::-moz-focus-inner,  
+input[type="file"] > input[type="button"]::-moz-focus-inner{border:none;}  
+:focus{outline:none;} 
+/*end 去掉Button的虚线框*/
+
+
+<a href="javascript:;">这是一个链接</a>
